@@ -1,0 +1,15 @@
+<html>
+<body>
+<h1>Input Form</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'input_minutes' %}" method="post">
+{% csrf_token %}
+<label>Rolling window in minutes</label>
+<input type="text" name="minutes" id="minutes" value="0" />
+<br />
+<input type="submit" value="Submit" />
+</form>
+</body>
+</html>

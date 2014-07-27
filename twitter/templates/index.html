@@ -1,0 +1,45 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+
+<meta http-equiv="refresh" content="30">
+
+<style>
+table, td, th {
+    border: 1px solid blue;
+    width: "300px";
+}
+
+th {
+    background-color: blue;
+    color: white;
+}
+</style>
+
+</head>
+<body>
+
+
+<br />
+<br />
+<div id="TopTweets">
+<h2>Rolling Window Tweets</h2>
+{% if minutes %}
+    <div id="rolling_window"><p>Rolling window: {{ minutes }} minutes.</p></div>
+{% endif %}
+
+{% if retweets %}
+    <table>
+    <tr><th>Tweet Text</th><th>Count</th></tr>
+    {% for tweet in retweets %}
+        <tr><td >{{ tweet.text }}</td><td>{{ tweet.count }}</td></tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No tweets are available.</p>
+{% endif %}
+
+</div>
+</body>
+<html> 

@@ -1,0 +1,7 @@
+django
+south
+pytz
+ipython
+requests
+TwitterAPI
+python-dateutil
